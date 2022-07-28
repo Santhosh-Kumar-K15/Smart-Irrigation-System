@@ -1,6 +1,4 @@
 #define BLYNK_PRINT Serial
-
-
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 
@@ -8,21 +6,21 @@ int sensorpin=A0;
 int sensorvalue=0;
 int outputvalue=0;
 
-char auth[] = "HwL7fCjoedzhaXg5xRzI4YzlZ7uiI7_E";
-char ssid[] = "varshini11";
-char pass[] = "varshini11";
+//change auth,ssid and pass accordingly to your project
+char auth[] = "HwL7fCjoedzhaXg5xRzI4YzlZ7uiI7_-E-";
+char ssid[] = "--Sandyy-- -vivo-";
+char pass[] = "--Sandyy-- -vivo-";
 
 void setup()
 {
   Serial.begin(9600);
-
   Blynk.begin(auth, ssid, pass);
 }
 
 void loop()
 {
   sensorvalue=analogRead(sensorpin);
-  outputvalue=map(sensorvalue,0,1023,0,100); //100,0 pottupaaru
+  outputvalue=map(sensorvalue,0,1023,0,100); 
   delay(1000);
 
   if(outputvalue>74)
